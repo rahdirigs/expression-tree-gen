@@ -22,7 +22,7 @@ function isValidExpression(expr) {
     return false;
   }
   for (var i = 0; i < expr.length; i++) {
-    if ('abcdefghijklmnopqrstuvwxyz*()/+-'.indexOf(expr[i]) === -1) {
+    if ('abcdefghijklmnopqrstuvwxyz*()/+-^'.indexOf(expr[i]) === -1) {
       return false;
     }
   }
@@ -47,7 +47,7 @@ function infixToPostfix(expression) {
   if (!isValidExpression(expression)) {
     return null;
   }
-  const prec = { "*": 3, "/": 3, "-": 2, "+": 2, "(": 1 }
+  const prec = { "^": 4, "*": 3, "/": 3, "-": 2, "+": 2, "(": 1 }
   op_stack = []
   postfixList = []
   tokens = expression.split('')

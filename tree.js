@@ -69,7 +69,7 @@ function drawEdgeAnimated(origin_x, origin_y, destine_x, destine_y, ctx, resolve
 }
 
 function constructTree(postfix) {
-    const OPERATORS = ['*', '/', '-', '+']
+    const OPERATORS = ['^', '*', '/', '-', '+']
     var stack = []
     var root = null;
     var current;
